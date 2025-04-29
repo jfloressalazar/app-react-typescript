@@ -1,0 +1,29 @@
+{
+  "name": "app-react-typescript",
+  "version": "1.0.0",
+  "description": "Una app de tutorial para aprender React, TypeScript y Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfloressalazar/app-react-typescript.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "app",
+    "tutorial",
+    "express"
+  ],
+  "author": "Jesús Flores",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfloressalazar/app-react-typescript/issues"
+  },
+  "homepage": "https://github.com/jfloressalazar/app-react-typescript#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
