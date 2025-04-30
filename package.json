@@ -1,5 +1,6 @@
 {
   "name": "app-react-typescript",
+  "type": "module",
   "version": "1.0.0",
   "description": "Una app de tutorial para aprender React, TypeScript y Express",
   "main": "index.js",

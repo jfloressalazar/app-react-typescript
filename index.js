@@ -1,11 +1,11 @@
 // importar express
-const express = require('express');
+import express from 'express'
 
 // inicializar express
 const app = express()
 
-// variable para mi puerto de servidor
-const port = 8080
+// variable de entorno para puerto de servidor ó 8080 por defecto
+const port = process.env.PORT || 8080
 
 // Routing
 
