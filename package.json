@@ -1,11 +1,10 @@
 {
   "name": "app-react-typescript",
-  "type": "module",
   "version": "1.0.0",
   "description": "Una app de tutorial para aprender React, TypeScript y Express",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -28,6 +27,9 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@types/express": "^5.0.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
