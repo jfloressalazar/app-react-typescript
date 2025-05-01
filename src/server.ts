@@ -1,27 +1,14 @@
 // importar express
 import express from 'express'
 
+import router from './router' // importar router
+
+
+
 // inicializar express
 const app = express()
 
-// Routing
-
-// ruta raiz
-app.get('/', (req, res) => {
-    res.send('Hola  mundo desde Express!')
-})
-
-// ruta a blog
-app.get('/blog', (req, res) => {
-    res.send('Bienvenido a mi blog!')
-})
-// ruta a ecommerce
-app.get('/ecommerce', (req, res) => {
-    res.send('Bienvenido a mi ecommerce!')
-})
-// ruta a contacto
-app.get('/contacto', (req, res) => {
-    res.send('Bienvenido a mi pagina de contacto!')
-})
+// la ruta / es la ruta principal de la aplicacion puede variar si se coloca otro prefijo /api por ejemplo
+app.use('/', router) // usar el router en la ruta /
 
 export default app
