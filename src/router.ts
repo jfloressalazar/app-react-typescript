@@ -4,7 +4,7 @@ const router = Router()
 
 // rutas para autenticación y registro
 router.post('/auth/register', (req, res) => {
-    console.log('Desde register...')
+    console.log(req.body)
 })
 
 export default router
