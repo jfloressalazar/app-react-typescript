@@ -2,7 +2,9 @@
 
 dependencias
 - express
-
+- mongoose
+- dotenv
+- colors
 
 dependencias de desarrollo
 - nodemon
