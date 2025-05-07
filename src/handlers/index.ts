@@ -1,7 +1,8 @@
+import { Request, Response } from "express"
 import User from "../models/User"
 
 // Archivo para manejar las funciones que se llaman desde el router
-export const createAccount = async (req, res) => {
+export const createAccount = async (req: Request, res: Response) => {
     console.log(req.body)
     // ipcion 1 nsertar el usuario en la base de datos con el apartado body de la petición
     // await User.create(req.body)
