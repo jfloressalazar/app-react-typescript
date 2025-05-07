@@ -13,6 +13,8 @@ const router = Router()
 router.post('/auth/register',
     body('username').notEmpty().withMessage('El nombre de usuario es requerido'), // validar que el nombre de usuario no esté vacío
     body('email').isEmail().withMessage('El correo no es válido'), // validar que el correo sea un correo válido
+    body('password').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'), // validar que la contraseña tenga al menos 6 caracteres
+    body('name').notEmpty().withMessage('El nombre es requerido'), // validar que el nombre no esté vacío
     createAccount)
 
 export default router
