@@ -51,4 +51,10 @@ export const login = async (req: Request, res: Response) => {
     if (!errors.isEmpty()) {
         res.status(400).json({ errors: errors.array() }) // si hay errores, devolver un error 400 con los errores
     }
+    const email = req.body.email
+    const user = await User.findOne({email})
+    if (!user) {
+        const error = new Error('El corre ingreado no existe con una cuenta asocuada')
+        res.status(404).json({ error: error.message })
+    }
 }
