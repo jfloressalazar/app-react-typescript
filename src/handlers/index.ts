@@ -1,17 +1,11 @@
 import { Request, Response } from "express"
-import { validationResult } from "express-validator" // importar express-validator para validar los datos de entrada
 import slug from "slug"
 import User from "../models/User"
 import { hashearPassword, comparePassword } from "../utils/auth"
 
+
 // Archivo para manejar las funciones que se llaman desde el router
 export const createAccount = async (req: Request, res: Response) => {
-    // manejo de errores de validación
-    let errors = validationResult(req) // validar los datos de entrada
-
-    if (!errors.isEmpty()) {
-        res.status(400).json({ errors: errors.array() }) // si hay errores, devolver un error 400 con los errores
-    }
 
     const email = req.body.email
     const password = req.body.password
@@ -46,11 +40,7 @@ export const createAccount = async (req: Request, res: Response) => {
 }
 
 export const login = async (req: Request, res: Response) => {
-    let errors = validationResult(req)
 
-    if (!errors.isEmpty()) {
-        res.status(400).json({ errors: errors.array() }) // si hay errores, devolver un error 400 con los errores
-    }
     const email = req.body.email
     const user = await User.findOne({ email })
     if (!user) {
