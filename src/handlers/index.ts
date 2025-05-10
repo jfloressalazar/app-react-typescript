@@ -8,7 +8,7 @@ import { hashearPassword } from "../utils/auth"
 export const createAccount = async (req: Request, res: Response) => {
     // manejo de errores de validación
     let errors = validationResult(req) // validar los datos de entrada
-   
+
     if (!errors.isEmpty()) {
         res.status(400).json({ errors: errors.array() }) // si hay errores, devolver un error 400 con los errores
     }
@@ -43,4 +43,12 @@ export const createAccount = async (req: Request, res: Response) => {
 
     // uso de response para enviar un mensaje de registro exitoso
     res.status(201).send('registro exitoso')
+}
+
+export const login = async (req: Request, res: Response) => {
+    let errors = validationResult(req)
+
+    if (!errors.isEmpty()) {
+        res.status(400).json({ errors: errors.array() }) // si hay errores, devolver un error 400 con los errores
+    }
 }

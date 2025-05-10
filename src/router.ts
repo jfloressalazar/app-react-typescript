@@ -3,7 +3,7 @@ import { Router } from 'express'
 import { body } from 'express-validator' // importar express-validator para validar los datos de entrada
 
 // impotar la función de crear cuenta desde el archivo handlers
-import { createAccount } from './handlers'
+import { createAccount, login } from './handlers'
 
 
 const router = Router()
@@ -16,5 +16,10 @@ router.post('/auth/register',
     body('password').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'), // validar que la contraseña tenga al menos 6 caracteres
     body('name').notEmpty().withMessage('El nombre es requerido'), // validar que el nombre no esté vacío
     createAccount)
+
+router.post('/auth/login',
+    body('email').isEmail().withMessage('El correo no es válido'),
+    body('password').notEmpty().withMessage('La contraseña es requerida'),
+    login)
 
 export default router
